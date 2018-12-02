@@ -1,0 +1,69 @@
+th{
+	font-size: 20px;
+	color: #007bff;
+}
+
+td, th{
+	width: 300px;
+	text-align: center;
+	padding: 15px;
+	border: 1px solid #ddd;;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+td:hover{
+	background-color: #ddd;
+}
+
+.message{
+	text-align: justify;
+}
+
+#table{
+	width: 100%;
+	margin: auto;
+	overflow-x: scroll;
+}
+
+table{
+	margin-top: 100px;
+	border-collapse: collapse;
+}
+
+.accept{
+	background: green;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.reject{
+	background: red;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.resolved{
+	background: #007bff;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+button{
+	font-size: 15px;
+	height: 25px;
+	display: block;
+	margin-bottom: 15px;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (max-width: 1024){
+	
+}
