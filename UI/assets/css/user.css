@@ -1,0 +1,186 @@
+body{
+	margin: 0;
+	font-family: sans-serif;
+	padding-bottom: 100px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #007bff;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  padding-top: 23px;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.topnav a.active {
+  color: #000;
+}
+
+#brand{
+	padding-left: 50px;
+	padding-top: 20px;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+#avatar{
+	float: right;
+	padding-right: 30px;
+}
+
+#avatar img{
+	border-radius: 50px;
+}
+
+#avatar2{
+	display: block;
+}
+
+#main{
+	margin-left: 300px;
+}
+
+#catch{
+	color: #818181;
+	font-size: 20px;
+}
+
+#report{
+	width: 830px;
+	height: 60px;
+	padding-left: 10px;
+	resize: none;
+	overflow: hidden;
+	word-wrap: break-word;
+	display: block;
+}
+
+#report::placeholder{
+	font-size: 20px;
+}
+
+#submit{
+	display: block;
+	font-size: 20px;
+	width: 100px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+}
+
+.check{
+	margin-bottom: 10px;
+}
+
+.user{
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	color: #007bff;
+}
+
+.writeUp{
+	margin-top: 10px;
+	color: #818181;
+	font-size: 18px;
+}
+
+.posts{
+	margin-top: 5%;
+	margin-right: 20%;
+	text-align: justify;
+	background-color: #f8f9fa;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 2px 5px 5px rgba(136, 136, 136, 0.2);
+}
+
+#image-post{
+	height: auto;
+	width: 600px;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.comment{
+	width: 700px;
+	height: 30px;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+#comment::placeholder{
+	font-size: 15px;
+}
+
+.flag{
+	color: red;
+	padding-top: 23px;
+}
+
+.intervention, #rep{
+	color: #007bff;
+}
+
+.extra{
+	float: right;
+	padding-right: 10px;
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: 400;
+}
+
+.pic{
+	display: inline-block;
+}
+
+#records{
+	display: inline-block;
+	padding-left: 50px;
+}
+
+#pishure{
+	padding-top: 0;
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px){
+	#main{
+		margin-left: 15px;
+	}
+
+	#report{
+		width: 250px;
+	}
+
+	#image-post{
+		height: auto;
+		width: 200px;
+		display: block;
+	}
+
+	#brand{
+		padding-left: 10px;
+	}
+
+	.comment{
+		width: 200px;
+	}
+
+}
