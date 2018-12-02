@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/user.css">
+</head>
+<body>
+	<nav>
+		<div class="topnav">
+			<a href="index.html" id="brand">iReporter</a>
+
+		  	<a class="active nav-link" href="">Home</a>
+		  	<a href="profile.html" class="nav-link">Profile</a>
+
+		  	<a href="profile.html" id="avatar"><img src="assets/img/avatar.jpg" height="35px" width="auto"></a>
+		</div>
+	</nav>
+
+	<div id="main">
+		<div>
+			<h3 id="rep">iReporter</h3>
+			<p id="catch">See something...say something</p>
+			<a href="#"><img src="assets/img/avatar.jpg" height="35" width="auto" id="avatar2"></a>
+			<!-- <input type="text" name="post" placeholder="What's on your mind?" id="report"> -->
+			<textarea placeholder="What's on your mind?" id="report"></textarea>
+			<p class="pic">Upload picture: </p>
+			<form action="/action_page.php" class="pic">
+			  <input type="file" name="pic" accept="image/*">
+			</form>
+
+			<p class="pic">Upload video: </p>
+			<form action="/action_page.php" class="pic">
+			  <input type="file" name="vid" accept="video/*">
+			</form>
+			<div class="flag">
+				<input type="checkbox" name="flag" class="check">Red Flag
+			</div>
+
+			<div class="intervention">
+				<input type="checkbox" name="intervention" class="check">Intervention
+			</div>
+			<button type="submit" id="submit">Post</button>
+		</div>
+
+
+		<div class="posts">
+			<h5 class="extra">Delete Post</h5>
+			<h5 class="extra">Edit Post</h5>
+
+			<h4 class="flag">Red Flag: <span>Pending</span></h4>
+			<a href="#"><img src="assets/img/avatar.jpg" height="35" width="auto" id="avatar2"></a>
+			<p class="user">Femi Balogun</p>
+			<p class="writeUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<img src="assets/img/land.jpg" id="image-post">
+			<div class="interact">
+				
+				<div>
+					<a href="#"><img src="assets/img/avatar.jpg" height="35" width="auto" id="avatar2"></a>
+					<input type="text" name="post" placeholder="Comment" class="comment">
+				</div>
+					
+			</div>
+		</div>
+
+
+		<div class="posts">
+			<h5 class="extra">Delete Post</h5>
+			<h5 class="extra">Edit Post</h5>
+
+			<h4 class="intervention">Intervention: <span>Pending</span></h4>
+			<a href="#"><img src="assets/img/avatar.jpg" height="35" width="auto" id="avatar2"></a>
+			<p class="user">Bola Lawal</p>
+			<p class="writeUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<div class="interact">
+				
+				<div>
+					<a href="#"><img src="assets/img/avatar.jpg" height="35" width="auto" id="avatar2"></a>
+					<input type="text" name="post" placeholder="Comment" class="comment">
+				</div>
+					
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
