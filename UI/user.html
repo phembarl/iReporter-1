@@ -34,13 +34,16 @@
 			<form action="/action_page.php" class="pic">
 			  <input type="file" name="vid" accept="video/*">
 			</form>
-			<div class="flag">
-				<input type="checkbox" name="flag" class="check">Red Flag
-			</div>
+				<form>
+					<div class="flag">
+						<input type="radio" name="report" value="red-flag" class="check">Red Flag
+					</div>
 
-			<div class="intervention">
-				<input type="checkbox" name="intervention" class="check">Intervention
-			</div>
+					<div class="intervention">
+						<input type="radio" name="report" value="intervention" class="check">Intervention
+					</div>
+				</form>
+			
 			<button type="submit" id="submit">Post</button>
 		</div>
 
