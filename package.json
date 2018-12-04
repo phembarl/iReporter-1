@@ -1,0 +1,24 @@
+{
+  "name": "ireporter-1",
+  "version": "1.0.0",
+  "description": "Andela Developer Challenge 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phembarl/iReporter-1.git"
+  },
+  "author": "Oluwafemi Balogun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phembarl/iReporter-1/issues"
+  },
+  "homepage": "https://github.com/phembarl/iReporter-1#readme",
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
