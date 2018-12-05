@@ -1,46 +1,54 @@
  import data from '../models/red-flags.js';
 
- class Routes {
-	getRedFlags (req, res) {
+ class RedFlags {
+	getAllRedFlags (req, res) {
 		res.json({
 			status: 200,
 			data: data
 		});
 	}
 
-	getRedFlag (req, res) {
-		let id = parseInt(req.params.id);
-
+	getSingleRedFlag (req, res) {
+		let id = Number(req.params.id);
 
 		const redFlag = data.find(redFlagData => redFlagData.id === id);
 
 		if(!redFlag){
-			res.json({
+			return res.status(404).json({
 				status: 404,
 				error: 'red-flag record not found'
 			});
 		}
-		res.json({
+		return res.json({
 			status: 200,
 			data: [redFlag]
 		});
 	}
 
 	createRedFlag (req, res) {
+		const {location, Images, Videos, comment} = req.body;
 		const lastData = data[data.length - 1];
 		const newData = {
-			status: 201,
-			data: [{
-				id: parseInt(lastData.id + 1),
-				message: 'Created red-flag record'
-			}]
+			id: lastData.id + 1,
+    		createdOn: new Date().toString(),
+    		createdBy: lastData.createdBy + 1,
+    		type: 'red-flag', 
+    		location: location.trim(), 
+    		status: 'Pending',
+    		Images: ['video1', 'video2'],
+    		Videos: ['image1', 'image2'],
+    		comment: comment.trim()
 		}
 
 		data.push(newData)
-		res.json({
-			newData
+		res.status(201).json({
+			status: 201,
+			data:[{
+				id: newData.id,
+				message: 'Created red-flag record'
+			}]
 		});
 	}
 }
 
-export default new Routes();
+export default new RedFlags();

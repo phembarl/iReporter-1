@@ -1,13 +1,14 @@
 import express from 'express';
-import routes from '../controllers/redFlags';
-import controllers from '../controllers/red-flags.js';
+import redFlags from '../controllers/redFlags';
+import midware from '../middleware/validate'
 
 const router = express.Router();
 
-router.get('/red-flags', routes.getRedFlags);
+router.get('/red-flags', redFlags.getAllRedFlags);
 
-router.post('/red-flags', routes.createRedFlag);
+router.get('/red-flags/:id', redFlags.getSingleRedFlag);
 
-router.get('/red-flags/:id', routes.getRedFlag);
+router.post('/red-flags', midware.isValid, redFlags.createRedFlag);
+
 
 export default router;
