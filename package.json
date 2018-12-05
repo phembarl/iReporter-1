@@ -2,10 +2,10 @@
   "name": "ireporter-1",
   "version": "1.0.0",
   "description": "Andela Developer Challenge 2",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-watch server/app.js"
+    "test": "echo \"Error: no test or tests specified\" && exit 1",
+    "start": "babel-watch server/index.js"
   },
   "repository": {
     "type": "git",

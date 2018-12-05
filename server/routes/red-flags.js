@@ -1,8 +1,10 @@
 import express from 'express';
-import controllers from '../controllers/red-flags.js';
+import redFlags from '../controllers/redFlags.js';
 
 const router = express.Router();
 
-router.get('/red-flags', controllers.getRedFlags);
+router.get('/red-flags', redFlags.getAllRedFlags);
+
+router.get('/red-flags/:id', redFlags.getSingleRedFlag);
 
 export default router;
