@@ -24,31 +24,31 @@
 			data: [redFlag]
 		});
 	}
-
-	createRedFlag (req, res) {
-		const {location, Images, Videos, comment} = req.body;
-		const lastData = data[data.length - 1];
-		const newData = {
-			id: lastData.id + 1,
-    		createdOn: new Date().toString(),
-    		createdBy: lastData.createdBy + 1,
-    		type: 'red-flag', 
-    		location: location.trim(), 
-    		status: 'Pending',
-    		Images: ['video1', 'video2'],
-    		Videos: ['image1', 'image2'],
-    		comment: comment.trim()
-		}
-
-		data.push(newData)
-		res.status(201).json({
-			status: 201,
-			data:[{
-				id: newData.id,
-				message: 'Created red-flag record'
-			}]
-		});
-	}
-}
+   
+   createRedFlag (req, res) {
+     const {location, Images, Videos, comment} = req.body;
+     const lastData = data[data.length - 1];
+     const newData = {
+       id: lastData.id + 1,
+       createdOn: new Date().toString(),
+       createdBy: lastData.createdBy + 1,
+       type: 'red-flag',
+       location: location.trim(),
+       status: 'Pending',
+       Images: ['video1', 'video2'],
+       Videos: ['image1', 'image2'],
+       comment: comment.trim()
+     }
+     
+     data.push(newData)
+     res.status(201).json({
+       status: 201,
+       data:[{
+         id: newData.id,
+         message: 'Created red-flag record'
+       }]
+     });
+   }
+ }
 
 export default new RedFlags();
