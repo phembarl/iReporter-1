@@ -10,5 +10,9 @@ router.get('/red-flags/:id', redFlags.getSingleRedFlag);
 
 router.post('/red-flags', midware.isValid, redFlags.createRedFlag);
 
+router.patch('/red-flags/:id/location', midware.validateLocation, redFlags.editLocation);
+
+router.patch('/red-flags/:id/comment',midware.validateComment, redFlags.editComment);
+
 
 export default router;
