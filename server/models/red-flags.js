@@ -2,7 +2,7 @@ export default [
 	{
     id: 101,
     createdOn: new Date().toString(),
-    createdBy: 5,
+    createdBy: 1,
     type: 'red-flag',
     location: '0.463062, 2.901245.',
     status: 'Draft',
@@ -13,7 +13,7 @@ export default [
   {
     id: 102,
     createdOn: new Date().toString(),
-    createdBy: 4,
+    createdBy: 2,
     type: 'red-flag', 
     location: '1.946493, 5.657392', 
     status: 'Rejected',
@@ -24,7 +24,7 @@ export default [
   {
     id: 103,
     createdOn: new Date().toString(),
-    createdBy: 4,
+    createdBy: 3,
     type: 'red-flag', 
     location: '7.026452, 9.028346', 
     status: 'Under Investigation',
@@ -46,7 +46,7 @@ export default [
   {
     id: 105,
     createdOn: new Date().toString(),
-    createdBy: 4,
+    createdBy: 5,
     type: 'red-flag', 
     location: '5.394649, 4.024642', 
     status: 'Rejected',
