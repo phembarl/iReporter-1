@@ -92,6 +92,19 @@
 			}]
 		});
 	}
+
+	deleteRedFlag (req, res) {
+		let id = Number(req.params.id);
+		const redFlag = data.find(redFlagData => redFlagData.id === id);
+		const position = data.indexOf(redFlag);
+		data.splice(position, 1);
+		res.json({
+			status: 200,
+			data: redFlag.id,
+			message : 'red-flag record has been deleted'
+		})
+
+	}
 }
 
 export default new RedFlags();
