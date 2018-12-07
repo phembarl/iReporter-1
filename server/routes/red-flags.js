@@ -15,5 +15,7 @@ router.patch('/red-flags/:id/location', midware.validateLocation, redFlags.editL
 
 router.patch('/red-flags/:id/comment',midware.validateComment, redFlags.editComment);
 
+router.delete('/red-flags/:id', redFlags.deleteRedFlag);
+
 
 export default router;
