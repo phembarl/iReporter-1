@@ -31,16 +31,16 @@
 		const lastData = data[data.length - 1];
 		const newData = {
 			id: lastData.id + 1,
-    		createdOn: new Date().toString(),
-    		createdBy: lastData.createdBy + 1,
-    		type: 'red-flag', 
-    		location, 
-    		status: 'Pending',
-    		Images: ['video1', 'video2'],
-    		Videos: ['image1', 'image2'],
-    		comment
+    			createdOn: new Date().toString(),
+    			createdBy: lastData.createdBy + 1,
+    			type: 'red-flag', 
+    			location, 
+    			status: 'Pending',
+    			Images: ['video1', 'video2'],
+    			Videos: ['image1', 'image2'],
+    			comment
 		}
-
+		
 		data.push(newData)
 		res.status(201).json({
 			status: 201,
