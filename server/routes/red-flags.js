@@ -2,6 +2,7 @@ import express from 'express';
 import redFlags from '../controllers/redFlags';
 import midware from '../middleware/validate';
 
+
 const router = express.Router();
 
 router.get('/red-flags', redFlags.getAllRedFlags);
