@@ -28,7 +28,7 @@ class Midware{
 				status: 400,
 				message: 'Invalid comment'
 			});
-		}else if(comment.length < 50) {
+		}else if(comment.length < 20) {
 			return res.status(400).json({
 				status: 400,
 				error: 'More details please'
@@ -68,7 +68,7 @@ class Midware{
 				status: 400,
 				message: 'Invalid comment'
 			});
-		}else if(comment.length < 50) {
+		}else if(comment.length < 20) {
 			return res.status(400).json({
 				status: 400,
 				error: 'More details please'
