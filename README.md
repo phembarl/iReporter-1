@@ -1,4 +1,7 @@
 # iReporter-1
+
+[![Build Status](https://travis-ci.com/phembarl/iReporter-1.svg?branch=develop)](https://travis-ci.com/phembarl/iReporter-1)
+
 Andela Developer Challenge. iReporter enables
 concerned citizens to bring any form of corruption to the notice of appropriate authorities and the
 general public.
