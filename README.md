@@ -29,5 +29,3 @@ general public.
 Navigate into the folder from command line and run the following command:
 
 npm start
-
-https://travis-ci.com/phembarl/iReporter-1.svg?branch=develop
