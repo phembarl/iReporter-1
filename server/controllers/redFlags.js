@@ -67,7 +67,7 @@
 			status: 200,
 			data: [{
 				id: redFlag.id,
-				message: '“Updated red-flag record’s location'
+				message: 'Updated red-flag record’s location'
 			}]
 		});
 	}
@@ -88,7 +88,7 @@
 			status: 200,
 			data: [{
 				id: redFlag.id,
-				message: '“Updated red-flag record’s comment'
+				message: 'Updated red-flag record’s comment'
 			}]
 		});
 	}
@@ -107,10 +107,11 @@
 		data.splice(position, 1);
 		res.json({
 			status: 200,
-			data: redFlag.id,
-			message : 'red-flag record has been deleted'
-		})
-
+			data: [{
+				id: redFlag.id,
+				message: 'red-flag record has been deleted'
+			}]
+		});
 	}
 }
 
