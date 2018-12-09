@@ -1,5 +1,5 @@
 export default [
-	{
+  {
     id: 101,
     createdOn: new Date().toString(),
     createdBy: 1,
@@ -14,8 +14,8 @@ export default [
     id: 102,
     createdOn: new Date().toString(),
     createdBy: 2,
-    type: 'red-flag', 
-    location: '1.946493, 5.657392', 
+    type: 'red-flag',
+    location: '1.946493, 5.657392',
     status: 'Rejected',
     Images: ['image1', 'image2'],
     Videos: ['video1', 'video2'],
@@ -25,8 +25,8 @@ export default [
     id: 103,
     createdOn: new Date().toString(),
     createdBy: 3,
-    type: 'red-flag', 
-    location: '7.026452, 9.028346', 
+    type: 'red-flag',
+    location: '7.026452, 9.028346',
     status: 'Under Investigation',
     Images: ['image1', 'image2'],
     Videos: ['video1', 'video2'],
@@ -36,8 +36,8 @@ export default [
     id: 104,
     createdOn: new Date().toString(),
     createdBy: 4,
-    type: 'red-flag', 
-    location: '2.037562, 8.309372', 
+    type: 'red-flag',
+    location: '2.037562, 8.309372',
     status: 'Rejected',
     Images: ['image1', 'image2'],
     Videos: ['video1', 'video2'],
@@ -47,11 +47,10 @@ export default [
     id: 105,
     createdOn: new Date().toString(),
     createdBy: 5,
-    type: 'red-flag', 
-    location: '5.394649, 4.024642', 
+    type: 'red-flag',
+    location: '5.394649, 4.024642',
     status: 'Rejected',
     Images: ['image1', 'image2'],
     Videos: ['video1', 'video2'],
     comment: 'We need more roads as promised',
-  }
-]
+  }];
