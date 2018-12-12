@@ -1,36 +1,16 @@
 import db from '../models/connect';
 
 
-const RedFlags = {
-  getAllRedFlags(req, res) {
-    db.query('SELECT * FROM redflags',
+const Interventions = {
+  getAllInterventions(req, res) {
+    db.query('SELECT * FROM interventions',
       (err, result) => {
         if (err) {
           return console.error('error running query', err);
         }
         if (result.rows.length === 0) {
-          res.json({
-            message: 'It is empty over here',
-          });
-        }
-        return res.json({
-          data: result.rows,
-        });
-      });
-  },
-
-  getSingleRedFlag(req, res) {
-    const id = Number(req.params.id);
-
-    db.query(`SELECT * FROM redflags WHERE id = ${id}`,
-      (err, result) => {
-        if (err) {
-          return console.error('error running query', err);
-        }
-        if (result.rows.length === 0) {
-          return res.status(404).json({
-            status: 404,
-            error: 'red-flag record not found',
+          return res.json({
+            message: 'It is empty over here!',
           });
         }
         return res.json({
@@ -40,8 +20,29 @@ const RedFlags = {
       });
   },
 
-  async createRedFlag(req, res) {
-    const text = `INSERT INTO redflags(createdOn, createdBy,type, location, status,images, videos, comment)
+  getSingleIntervention(req, res) {
+    const id = Number(req.params.id);
+
+    db.query(`SELECT * FROM interventions WHERE id = ${id}`,
+      (err, result) => {
+        if (err) {
+          return console.error('error running query', err);
+        }
+        if (result.rows.length === 0) {
+          return res.status(404).json({
+            status: 404,
+            error: 'intervention record not found',
+          });
+        }
+        return res.json({
+          status: 200,
+          data: result.rows,
+        });
+      });
+  },
+
+  async createIntervention(req, res) {
+    const text = `INSERT INTO interventions(createdOn, createdBy,type, location, status,images, videos, comment)
     VALUES($1, $2, $3, $4, $5, $6, $7, $8) returning *`;
 
     const values = [
@@ -60,8 +61,8 @@ const RedFlags = {
       return res.status(201).send({
         data: [{
           id: rows[0].id,
-          redFlag: rows[0],
-          message: 'Created red-flag record',
+          intervention: rows[0],
+          message: 'Created intervention record',
         }],
       });
     } catch (error) {
@@ -75,13 +76,14 @@ const RedFlags = {
   async editLocation(req, res) {
     const id = Number(req.params.id);
     try {
-      const { rows } = await db.query(`UPDATE redflags 
+      const { rows } = await db.query(`UPDATE interventions 
     SET location = $1 WHERE id = $2 returning *`, [req.body.location, id]);
       return res.status(200).send({
+        status: 200,
         data: [{
           id,
-          redFlag: rows[0],
-          message: 'Updated red-flag record\'s location',
+          intervention: rows[0],
+          message: 'Updated intervention record\'s location',
         }],
       });
     } catch (error) {
@@ -94,13 +96,13 @@ const RedFlags = {
   async editComment(req, res) {
     const id = Number(req.params.id);
     try {
-      const { rows } = await db.query(`UPDATE redflags 
+      const { rows } = await db.query(`UPDATE interventions 
     SET comment = $1 WHERE id = $2 returning *`, [req.body.comment, id]);
       return res.status(200).send({
         data: [{
           id,
-          redFlag: rows[0],
-          message: 'Updated red-flag record\'s comment',
+          intervention: rows[0],
+          message: 'Updated intervention record\'s comment',
         }],
       });
     } catch (error) {
@@ -111,16 +113,17 @@ const RedFlags = {
     }
   },
 
-  async deleteRedFlag(req, res) {
+  async deleteIntervention(req, res) {
     const id = Number(req.params.id);
     try {
-      const { rows } = await db.query(`DELETE FROM redflags 
+      const { rows } = await db.query(`DELETE FROM interventions 
     WHERE id = $1`, [id]);
       return res.json({
+        status: 200,
         data: [{
           id,
-          redFlag: rows[0],
-          message: 'red-flag record has been deleted',
+          intervention: rows[0],
+          message: 'intervention record has been deleted',
         }],
       });
     } catch (error) {
@@ -132,4 +135,4 @@ const RedFlags = {
   },
 };
 
-export default RedFlags;
+export default Interventions;

@@ -8,7 +8,8 @@
     "build": "babel server/ -d build/",
     "start": "babel-watch server/index.js",
     "coverage": "nyc report ---reporter=text-lcov | coveralls",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "migrate": "babel-watch server/migrations/create"
   },
   "repository": {
     "type": "git",
@@ -21,14 +22,20 @@
   },
   "homepage": "https://github.com/phembarl/iReporter-1#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "moment": "^2.23.0",
+    "pg": "^7.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-watch": "^2.0.7",
     "chai": "^4.2.0",

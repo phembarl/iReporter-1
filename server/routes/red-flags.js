@@ -1,20 +1,21 @@
 import express from 'express';
 import redFlags from '../controllers/redFlags';
 import midware from '../middleware/validate';
+import auth from '../middleware/auth';
 
 const router = express.Router();
 
-router.get('/red-flags', redFlags.getAllRedFlags);
+router.get('/red-flags', auth.verifyToken, redFlags.getAllRedFlags);
 
-router.get('/red-flags/:id', redFlags.getSingleRedFlag);
+router.get('/red-flags/:id', auth.verifyToken, redFlags.getSingleRedFlag);
 
-router.post('/red-flags', midware.isValid, redFlags.createRedFlag);
+router.post('/red-flags', auth.verifyToken, midware.isValid, redFlags.createRedFlag);
 
-router.patch('/red-flags/:id/location', midware.validateLocation, redFlags.editLocation);
+router.patch('/red-flags/:id/location', auth.verifyToken, midware.validateLocation, redFlags.editLocation);
 
-router.patch('/red-flags/:id/comment', midware.validateComment, redFlags.editComment);
+router.patch('/red-flags/:id/comment', auth.verifyToken, midware.validateComment, redFlags.editComment);
 
-router.delete('/red-flags/:id', redFlags.deleteRedFlag);
+router.delete('/red-flags/:id', auth.verifyToken, redFlags.deleteRedFlag);
 
 
 export default router;
