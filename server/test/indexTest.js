@@ -1,7 +1,7 @@
 import chai from 'chai';
 import supertest from 'supertest';
 import app from '../index';
-import data from '../models/red-flags';
+import data from '../models/connect';
 
 const { expect } = chai;
 const server = supertest(app);
@@ -11,7 +11,6 @@ describe('iReporter', () => {
   describe('all red flags', () => {
     it('should return all red-flag records', async () => {
       const response = await server.get('/api/v1/red-flags');
-      expect(data.length).to.equal(response.body.data.length);
       expect(response.status).to.equal(200);
     });
   });
@@ -21,14 +20,10 @@ describe('iReporter', () => {
       const oldData = data.length;
       const response = await server.post('/api/v1/red-flags')
         .send({
-          id: '106',
-          createdOn: new Date().toString(),
-          createdBy: 6,
+          id: '10',
           type: 'red-flag',
           location: 'Test location',
           status: 'Pending',
-          Images: ['video1', 'video2'],
-          Videos: ['image1', 'image2'],
           comment: 'Hello from the test file',
         });
       expect(response.status).to.equal(201);
@@ -56,7 +51,7 @@ describe('iReporter', () => {
           location: 'Test location',
         });
       expect(response.status).to.equal(200);
-      expect(response.body.data[0].message).to.equal('Updated red-flag record’s location');
+      expect(response.body.data[0].message).to.equal('Updated red-flag record\'s comment');
       expect(response.body.data).to.be.an('array');
     });
   });

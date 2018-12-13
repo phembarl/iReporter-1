@@ -1,4 +1,4 @@
-class Midware {
+const Midware = {
   isValid(req, res, next) {
     const { location, comment } = req.body;
 
@@ -7,73 +7,73 @@ class Midware {
         status: 400,
         error: 'Input location',
       });
-    } else if (typeof (location) !== 'string') {
+    } if (typeof (location) !== 'string') {
       return res.status(400).json({
         status: 400,
         error: 'Invalid location',
       });
-    } else if (!location.trim()) {
+    } if (!location.trim()) {
       return res.status(400).json({
         status: 400,
         error: 'Invalid location',
       });
-    } else if (!comment) {
+    } if (!comment) {
       return res.status(400).json({
         status: 400,
         error: 'Input comment',
       });
-    } else if (!comment.trim()) {
+    } if (!comment.trim()) {
       return res.status(400).json({
         status: 400,
         message: 'Invalid comment',
       });
-    } else if (comment.length < 20) {
+    } if (comment.length < 20) {
       return res.status(400).json({
         status: 400,
-        error: 'More details please',
+        error: 'More details in comment please',
       });
-    } else return next();
-  }
+    } next();
+  },
 
   validateLocation(req, res, next) {
-    const location = req.body.location;
+    const { location } = req.body;
     if (!location) {
       return res.status(400).json({
         status: 400,
         error: 'Input location',
       });
-    } else if (typeof (location) !== 'string') {
+    } if (typeof (location) !== 'string') {
       return res.status(400).json({
         status: 400,
         error: 'Invalid location',
       });
-    } else if (!location.trim()) {
+    } if (!location.trim()) {
       return res.status(400).json({
         status: 400,
         error: 'Invalid location',
       });
-    }else return next();
-  }
+    } next();
+  },
 
   validateComment(req, res, next) {
-    const comment = req.body.comment;
+    const { comment } = req.body;
     if (!comment) {
       return res.status(400).json({
         status: 400,
         error: 'Input comment',
       });
-    } else if (!comment.trim()) {
+    } if (!comment.trim()) {
       return res.status(400).json({
         status: 400,
         message: 'Invalid comment',
       });
-    } else if (comment.length < 20) {
+    } if (comment.length < 20) {
       return res.status(400).json({
         status: 400,
-        error: 'More details please'
+        error: 'More details in comment please',
       });
-    } else return next();
-  }
-}
+    } next();
+  },
+};
 
-export default new Midware();
+export default Midware;
