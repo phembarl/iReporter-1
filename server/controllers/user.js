@@ -33,6 +33,7 @@ const User = {
 
     try {
       const { rows } = await db.query(newUser, values);
+      console.log('>>>hi there!<<<');
       const userToken = validateUser.generateToken(rows[0].id);
       return res.status(201).json({ token: userToken });
     } catch (error) {
