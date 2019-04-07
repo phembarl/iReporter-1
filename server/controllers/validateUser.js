@@ -1,6 +1,8 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import secret from '../../sec';
+import dotenv from 'dotenv';
+
+dotenv.config();
 // import db from '../models/connect';
 
 // const user = (req, res) => {
@@ -20,23 +22,24 @@ import secret from '../../sec';
 // };
 
 class ValidateUser {
-  hashPassword(password) {
+  static hashPassword(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
   }
 
-  comparePassword(hashPassword, password) {
+  static comparePassword(hashPassword, password) {
     return bcrypt.compareSync(password, hashPassword);
   }
 
-  isValidEmail(email) {
+  static isValidEmail(email) {
     return /\S+@\S+/.test(email);
   }
 
-  generateToken(id) {
+  static generateToken(id) {
     const token = jwt.sign({ userId: id },
-      process.env.SECRET || secret, { expiresIn: '7d' });
+      process.env.SECRET, { expiresIn: '7d' });
     return token;
   }
 }
 
-export default new ValidateUser();
+
+export default ValidateUser;

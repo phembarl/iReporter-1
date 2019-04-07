@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken';
 import db from '../models/connect';
-import secret from '../../sec';
 
 
 const Auth = {
@@ -12,7 +11,7 @@ const Auth = {
       });
     }
     try {
-      const decrypted = await jwt.verify(token, process.env.SECRET || secret);
+      const decrypted = await jwt.verify(token, process.env.SECRET);
       const text = 'SELECT * FROM Users WHERE id = $1';
       const { rows } = await db.query(text, [decrypted.userId]);
       if (!rows[0]) {
