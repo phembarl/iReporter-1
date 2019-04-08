@@ -4,7 +4,7 @@
   "description": "Andela Developer Challenge 2",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha server/test/**/**.js --compilers js:babel-core/register --exit",
+    "test": "nyc mocha server/test/**/**.js --compilers js:babel-core/register --exit --timeout 6000",
     "build": "babel server/ -d build/",
     "start": "npm run migrate && npm run build && node build index.js",
     "serve": "babel-watch server/index.js",
