@@ -41,8 +41,8 @@ const RedFlags = {
   },
 
   async createRedFlag(req, res) {
-    const text = `INSERT INTO redflags(createdOn, createdBy,type, location, status,images, videos, comment)
-    VALUES($1, $2, $3, $4, $5, $6, $7, $8) returning *`;
+    const text = `INSERT INTO redflags(createdOn, createdBy,type, location, status,images, comment)
+    VALUES($1, $2, $3, $4, $5, $6, $7) returning *`;
 
     const values = [
       req.body.createdOn,
@@ -51,7 +51,6 @@ const RedFlags = {
       req.body.location,
       req.body.status,
       req.body.images,
-      req.body.videos,
       req.body.comment,
     ];
 

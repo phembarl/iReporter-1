@@ -58,8 +58,8 @@
 
 const { Pool } = require('pg');
 
-// const connectionString = 'postgresql://postgres:andela1@localhost:5432/ireporter';
-const connectionString = 'postgres://urglkuhjqtlwak:ed26195ed5964f4e17170d1fe7b2e269b38f3227d1cece67b1f80899ae7efb87@ec2-54-243-238-46.compute-1.amazonaws.com:5432/d383hu30aurddq';
+const connectionString = 'postgresql://postgres:andela1@localhost:5432/ireporter';
+// const connectionString = 'postgres://urglkuhjqtlwak:ed26195ed5964f4e17170d1fe7b2e269b38f3227d1cece67b1f80899ae7efb87@ec2-54-243-238-46.compute-1.amazonaws.com:5432/d383hu30aurddq';
 
 const db = new Pool({
   connectionString,
